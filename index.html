@@ -11,13 +11,60 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
 
     <title>Frontend Mentor | Base Apparel coming soon page</title>
   </head>
   <body>
-    We're coming soon Hello fellow shoppers! We're currently building our new
-    fashion store. Add your email below to stay up-to-date with announcements
-    and our launch deals. Email Address
+    <main>
+      <div class="main-wrapper">
+        <header id="logo"><img src="./images/logo.svg" alt="logo" /></header>
+        <img
+          src="./images/hero-mobile.jpg"
+          alt="girl in a peach shirt"
+          class="hero--mobile"
+        />
+
+        <div class="text-wrapper">
+          <h1 class="title">
+            <span>We're</span><br />
+            coming<br />
+            soon
+          </h1>
+          <p class="text">
+            Hello fellow shoppers! We're currently building our new fashion
+            store. Add your email below to stay up-to-date with announcements
+            and our launch deals.
+          </p>
+
+          <div class="form-wrapper">
+            <form action="">
+              <input
+                type="email"
+                placeholder="Email Address"
+                name="email"
+                id="email"
+              />
+              <button type="submit" class="submit--button">
+                <img src="./images/icon-arrow.svg" />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <img
+        src="./images/hero-desktop.jpg"
+        alt="girl in a peach shirt"
+        class="hero--desktop invisible"
+      />
+    </main>
 
     <footer>
       <p class="attribution">
