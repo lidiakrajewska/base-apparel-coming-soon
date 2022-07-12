@@ -41,7 +41,8 @@ main {
   font-size: 2.6rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.6rem;
+  line-height: 1.1;
   color: #413a3a;
 }
 
@@ -51,28 +52,212 @@ main {
 }
 
 .text {
-  margin: 1.5rem 0 2rem 0;
-  font-size: 0.85rem;
+  margin: 1.5rem 0 2.5rem 0;
+  font-size: 0.9rem;
   color: #ce9797;
   line-height: 1.5;
 }
 
 .form-wrapper {
-  border: 1px solid #ce9797;
+  position: relative;
 }
 
-.form-wrapper input {
+.email-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid #dfc3c3;
+  border-radius: 30px;
+}
+
+.email {
+  padding: 1rem 1.5rem;
+  width: 100%;
   background: 0, 100%, 98%;
-  color: #ce9797;
+  color: #413a3a;
+  font-family: "Josefin Sans", sans-serif;
   border: none;
+  outline: none;
+}
+
+.email::-webkit-input-placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  color: #dfc3c3;
+}
+
+.email:-ms-input-placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  color: #dfc3c3;
+}
+
+.email::-ms-input-placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  color: #dfc3c3;
+}
+
+.email::placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  color: #dfc3c3;
+}
+
+.error-icon-wrapper {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 1rem;
+}
+
+.error-icon {
+  height: 40%;
+  width: auto;
 }
 
 .submit--button {
+  padding: 0.7rem 1.6rem;
   background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
   border: none;
+  border-radius: 30px;
+  -webkit-box-shadow: rgba(206, 151, 151, 0.7) 0px 10px 20px;
+          box-shadow: rgba(206, 151, 151, 0.7) 0px 10px 20px;
 }
 
-.invisible {
+.submit--button:hover, .submit--button:active {
+  background: linear-gradient(135deg, #f7dede, #f8bfbf);
+  cursor: pointer;
+}
+
+.error--text {
   display: none;
+  position: absolute;
+  left: 2rem;
+  margin: 0.5rem 0;
+  color: #f96262;
+  -webkit-animation: errorMessage 0.5s ease;
+          animation: errorMessage 0.5s ease;
+}
+
+.attribution {
+  margin: 0.5rem auto;
+  font-size: 0.7rem;
+  text-align: center;
+  color: #ce9797;
+}
+
+.attribution a {
+  color: #ce9797;
+}
+
+.hero--desktop {
+  display: none;
+}
+
+@-webkit-keyframes errorMessage {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes errorMessage {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .hero--mobile {
+    display: none;
+  }
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    max-height: 100vh;
+  }
+  .main-wrapper {
+    -webkit-box-flex: 3;
+        -ms-flex: 3 1;
+            flex: 3 1;
+    background: url("./images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .text-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 70%;
+  }
+  .img-wrapper {
+    -webkit-box-flex: 2;
+        -ms-flex: 2 1;
+            flex: 2 1;
+  }
+  .hero--desktop {
+    display: inline;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #logo,
+  .text-wrapper {
+    width: 60%;
+  }
+  #logo {
+    margin: 4rem auto;
+  }
+  .text-wrapper {
+    padding-right: 4rem;
+    text-align: start;
+  }
+  .title {
+    font-size: 4rem;
+  }
+  .text {
+    font-size: 1rem;
+  }
+  .email {
+    font-size: 1rem;
+    padding: 1.2rem 1.7rem;
+  }
+  .submit--button {
+    padding: 0.9rem 2.5rem;
+  }
+  .error--text {
+    font-size: 0.9rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

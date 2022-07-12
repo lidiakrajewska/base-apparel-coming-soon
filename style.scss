@@ -1,7 +1,11 @@
 $primary-colour: hsl(0, 36%, 70%);
 $accent-colour: hsl(0, 93%, 68%);
 $dark-colour: hsl(0, 6%, 24%);
-$gradient-active: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+$gradient-background: linear-gradient(
+  135deg,
+  hsl(0, 0%, 100%),
+  hsl(0, 100%, 98%)
+);
 $gradient-button: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 $font: "Josefin Sans", sans-serif;
 
@@ -13,7 +17,7 @@ $font: "Josefin Sans", sans-serif;
 
 body {
   font-family: $font;
-  background: $gradient-active;
+  background: $gradient-background;
 }
 
 main {
@@ -46,7 +50,8 @@ main {
   font-size: 2.6rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.6rem;
+  line-height: 1.1;
   color: $dark-colour;
 
   span {
@@ -56,26 +61,167 @@ main {
 }
 
 .text {
-  margin: 1.5rem 0 2rem 0;
-  font-size: 0.85rem;
+  margin: 1.5rem 0 2.5rem 0;
+  font-size: 0.9rem;
   color: $primary-colour;
   line-height: 1.5;
 }
 
 .form-wrapper {
-  border: 1px solid $primary-colour;
-  input {
-    background: (0, 100%, 98%);
-    color: $primary-colour;
-    border: none;
+  position: relative;
+}
+
+.email-form {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid hsl(0, 30%, 82%);
+  border-radius: 30px;
+}
+
+.email {
+  padding: 1rem 1.5rem;
+  width: 100%;
+  background: (0, 100%, 98%);
+  color: $dark-colour;
+  font-family: $font;
+  border: none;
+  outline: none;
+  &::placeholder {
+    font-family: $font;
+    color: hsl(0, 30%, 82%);
   }
 }
 
-.submit--button {
-  background: $gradient-button;
-  border: none;
+.error-icon-wrapper {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
 }
 
-.invisible {
+.error-icon {
+  height: 40%;
+  width: auto;
+}
+
+.submit--button {
+  padding: 0.7rem 1.6rem;
+  background: $gradient-button;
+  border: none;
+  border-radius: 30px;
+  box-shadow: hsla(0, 36%, 70%, 0.7) 0px 10px 20px;
+  &:hover,
+  &:active {
+    background: linear-gradient(135deg, hsl(0, 63%, 92%), hsl(0, 80%, 86%));
+    cursor: pointer;
+  }
+}
+
+.error--text {
   display: none;
+  position: absolute;
+  left: 2rem;
+  margin: 0.5rem 0;
+  color: $accent-colour;
+  animation: errorMessage 0.5s ease;
+}
+
+.attribution {
+  margin: 0.5rem auto;
+  font-size: 0.7rem;
+  text-align: center;
+  color: $primary-colour;
+  a {
+    color: $primary-colour;
+  }
+}
+
+.hero--desktop {
+  display: none;
+}
+
+@keyframes errorMessage {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .hero--mobile {
+    display: none;
+  }
+
+  main {
+    display: flex;
+    width: 100%;
+    max-height: 100vh;
+  }
+
+  .main-wrapper {
+    flex: 3 1;
+    background: url("./images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70%;
+  }
+
+  .img-wrapper {
+    flex: 2 1;
+  }
+
+  .hero--desktop {
+    display: inline;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #logo,
+  .text-wrapper {
+    width: 60%;
+  }
+
+  #logo {
+    margin: 4rem auto;
+  }
+
+  .text-wrapper {
+    padding-right: 4rem;
+    text-align: start;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+
+  .email {
+    font-size: 1rem;
+    padding: 1.2rem 1.7rem;
+  }
+
+  .submit--button {
+    padding: 0.9rem 2.5rem;
+  }
+
+  .error--text {
+    font-size: 0.9rem;
+  }
 }

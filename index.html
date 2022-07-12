@@ -44,26 +44,36 @@
           </p>
 
           <div class="form-wrapper">
-            <form action="">
+            <form action="" class="email-form">
               <input
                 type="email"
                 placeholder="Email Address"
                 name="email"
                 id="email"
+                class="email"
               />
+              <div class="error-icon-wrapper">
+                <img
+                  src="./images/icon-error.svg"
+                  class="error-icon"
+                  alt="error icon"
+                />
+              </div>
               <button type="submit" class="submit--button">
                 <img src="./images/icon-arrow.svg" />
               </button>
             </form>
+            <p class="text error--text">Please provide a valid email!</p>
           </div>
         </div>
       </div>
-
-      <img
-        src="./images/hero-desktop.jpg"
-        alt="girl in a peach shirt"
-        class="hero--desktop invisible"
-      />
+      <div class="img-wrapper">
+        <img
+          src="./images/hero-desktop.jpg"
+          alt="girl in a peach shirt"
+          class="hero--desktop invisible"
+        />
+      </div>
     </main>
 
     <footer>
@@ -71,8 +81,13 @@
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/lidiakrajewska"
+          >Lidia Krajewska</a
+        >.
       </p>
     </footer>
+
+    <script src="./app.js"></script>
   </body>
 </html>
