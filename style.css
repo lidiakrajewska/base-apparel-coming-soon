@@ -69,6 +69,9 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 1px solid #dfc3c3;
   border-radius: 30px;
 }
@@ -111,6 +114,8 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
+  right: 3rem;
   margin-right: 1rem;
 }
 
@@ -120,7 +125,9 @@ main {
 }
 
 .submit--button {
-  padding: 0.7rem 1.6rem;
+  position: absolute;
+  right: -0.5rem;
+  padding: 0.9rem 1.7rem;
   background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
   border: none;
   border-radius: 30px;
@@ -253,8 +260,11 @@ main {
     font-size: 1rem;
     padding: 1.2rem 1.7rem;
   }
+  .error-icon-wrapper {
+    right: 5rem;
+  }
   .submit--button {
-    padding: 0.9rem 2.5rem;
+    padding: 1.2rem 2.5rem;
   }
   .error--text {
     font-size: 0.9rem;
